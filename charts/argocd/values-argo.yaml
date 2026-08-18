@@ -6,7 +6,7 @@ controller:
 
 server:
   replicas: 1
-  # serve plain HTTP so nginx can forward without a TLS cert on localhost
+  # serve plain HTTP; avoids self-signed cert issues on localhost
   extraArgs:
     - --insecure
   ingress:
@@ -14,6 +14,7 @@ server:
     ingressClassName: nginx
     annotations:
       nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+      nginx.ingress.kubernetes.io/ssl-redirect: "false"
     tls: false
 
 repoServer:
