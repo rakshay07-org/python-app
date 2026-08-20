@@ -5,7 +5,7 @@ metadata:
   description: Python application for demonstration purposes
   annotations:
     github.com/project-slug: rakshay07-org/python-app
-
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: development
